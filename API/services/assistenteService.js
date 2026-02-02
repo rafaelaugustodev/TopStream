@@ -56,7 +56,7 @@ Regras:
         },
       }
     );
-
+    
     const respostaJsonString = response.data?.choices?.[0]?.message?.content;
 
     if (!respostaJsonString) {
