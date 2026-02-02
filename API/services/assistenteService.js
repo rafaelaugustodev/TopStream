@@ -43,20 +43,22 @@ Regras:
     const response = await axios.post(
       'https://openrouter.ai/api/v1/chat/completions',
       {
-        model: 'meta-llama/llama-3.3-70b-instruct:free',
+        model: 'openrouter/free',
         messages,
-        response_format: { type: 'json_object' },
+        temperature: 0.2,
+        max_tokens: 300,
       },
       {
         headers: {
           Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-          'HTTP-Referer': process.env.FRONTEND_URL || 'http://localhost:3000',
-          'X-Title': process.env.APP_NAME || 'TopStream',
+          'HTTP-Referer': process.env.FRONTEND_URL || 'http://localhost',
+          'X-Title': 'TopStream',
         },
       }
     );
 
     const respostaJsonString = response.data?.choices?.[0]?.message?.content;
+
     if (!respostaJsonString) {
       throw new Error("Resposta vazia da IA");
     }
