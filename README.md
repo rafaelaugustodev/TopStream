@@ -62,7 +62,7 @@ Para rodar o projeto na sua máquina, siga os passos abaixo.
 ### 1\. Clonar o Repositório
 
 ```bash
-git clone https://github.com/Rafaasj07/TopStream.git
+https://github.com/rafaelaugustodev/TopStream.git
 cd TopStream
 ```
 
